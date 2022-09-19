@@ -1,0 +1,33 @@
+
+.products{
+    display: grid;
+    grid-template-columns: repeat(3, 30.33%);
+    grid-gap: 0.5rem;
+    justify-items: center;
+    justify-content: center;
+  
+    
+   
+}
+
+.product-below-pic{
+    display: flex;
+    justify-content: space-between;
+}
+.product img{
+    width:100%;
+    height:auto;
+}
+
+.product-name{
+    font-size: 1.2rem;
+}
+.product-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.root{
+    width:100vw;
+    background-color: black;
+}

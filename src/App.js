@@ -1,35 +1,40 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link, Outlet } from "react-router-dom";
 import Cart from "./components/Cart";
 import Home from "./components/Home";
+import Products from "./components/Products";
+import Layout from "./components/Layout";
 
 function App() {
-  const [numItems, setNumItems] = useState(0);
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    const cart = localStorage.getItem("cart");
+
+    if (cart) {
+      const foundCart = JSON.parse(cart);
+      setCart(foundCart);
+    }
+  }, []);
 
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout nums={numItems} />}>
+          <Route path="/" element={<Layout cart={cart} />}>
             <Route index element={<Home />} />
-            <Route path="/cart" element={<Cart />} />
+            <Route
+              path="/products"
+              element={<Products cart={cart} setCart={setCart} />}
+            />
+            <Route
+              path="/cart"
+              element={<Cart cart={cart} setCart={setCart} />}
+            />
           </Route>
         </Routes>
       </BrowserRouter>
-    </div>
-  );
-}
-
-function Layout(props) {
-  return (
-    <div>
-      <h1>Welcome to the app!</h1>
-      <nav>
-        <Link to="/">Home</Link> | <Link to="cart">Cart</Link> {props.nums}
-      </nav>
-      <div className="content">
-        <Outlet />
-      </div>
     </div>
   );
 }
