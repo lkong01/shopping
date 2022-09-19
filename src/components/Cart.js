@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import "../styles/cart.css";
+import Nav from "./Nav";
 
 function Cart(props) {
   const [total, setTotal] = useState(0);
@@ -50,6 +51,7 @@ function Cart(props) {
 
   return (
     <div className="cart">
+      <Nav cart={props.cart}></Nav>
       cart
       {props.cart.length === 0 ? <div>Your cart is empty.</div> : ""}
       {props.cart.map((item, index) => {

@@ -1,0 +1,31 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding:0.5rem 1rem;
+    font-size: 1.3rem;
+    position:sticky;
+    top: 0;
+    background-color: #edf6ff;
+}
+
+
+.nav-main{
+ display: flex;
+ gap:0.8rem;
+}
+
+nav a{
+    color: black;
+}
+
+nav img{
+   width: 24px;
+}
+
+.nav-cart{
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 1rem;
+    color: blueviolet;
+}

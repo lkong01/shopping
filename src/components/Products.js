@@ -1,4 +1,5 @@
 // import Item from "./Item";
+import Nav from "./Nav";
 import { v4 as uuidv4 } from "uuid";
 import "../styles/products.css";
 
@@ -91,23 +92,26 @@ function Products(props) {
     props.setCart(cartCopy);
   }
   return (
-    <div className="products">
-      {products.map((product, index) => {
-        return (
-          <div key={index} className="product">
-            <img src={product.pic} alt={`pic ${product.name}`} />
-            <div className="product-below-pic">
-              <div className="product-info">
-                <div className="product-name">{product.name}</div>
-                <div className="product-price">${product.price}</div>
+    <div>
+      <Nav cart={props.cart}></Nav>
+      <div className="products">
+        {products.map((product, index) => {
+          return (
+            <div key={index} className="product">
+              <img src={product.pic} alt={`pic ${product.name}`} />
+              <div className="product-below-pic">
+                <div className="product-info">
+                  <div className="product-name">{product.name}</div>
+                  <div className="product-price">${product.price}</div>
+                </div>
+                <button value={index} onClick={handleAddItem}>
+                  Add
+                </button>
               </div>
-              <button value={index} onClick={handleAddItem}>
-                Add
-              </button>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 }
