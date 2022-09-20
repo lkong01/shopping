@@ -1,3 +1,24 @@
+.checkout-content{
+display:flex;
+width: 100%;
+justify-content: space-evenly;
+padding:4rem 1rem;
+}
+.checkout h1{
+    text-align: center;
+}
+.checkout form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.checkout form input{
+    padding:0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: grey solid 1px;
+}
+
 .checkout-total-cost{
  width: 150px;
 }
