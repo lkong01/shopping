@@ -1,0 +1,12 @@
+.checkout-total-cost{
+ width: 150px;
+}
+
+.checkout-cost-item{
+display:flex;
+justify-content: space-between;
+}
+
+.checkout-cost-item p{
+    margin: 0.5rem 0;
+}

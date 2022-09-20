@@ -5,18 +5,19 @@ import Favicon from "../images/favicon.ico";
 import CartIcon from "../images/icons8-shopping-cart-48.png";
 import "../styles/nav.css";
 
-function Layout(props) {
+function Nav(props) {
   const [numItems, setNumItems] = useState(0);
-  let count = 0;
 
   function getNumItems() {
+    let count = 0;
     props.cart.map((item) => {
       count += item.num;
     });
+
     setNumItems(count);
   }
 
-  useEffect(() => getNumItems(), [props]);
+  useEffect(() => getNumItems(), [props.cart]);
 
   return (
     <nav>
@@ -37,4 +38,4 @@ function Layout(props) {
   );
 }
 
-export default Layout;
+export default Nav;

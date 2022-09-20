@@ -50,38 +50,48 @@ function Cart(props) {
   }, [props.cart]);
 
   return (
-    <div className="cart">
+    <div>
       <Nav cart={props.cart}></Nav>
-      cart
-      {props.cart.length === 0 ? <div>Your cart is empty.</div> : ""}
-      {props.cart.map((item, index) => {
-        return (
-          <div className="cart-item" key={index}>
-            <img src={item.product.pic} alt={item.product.name} />
-            <div className="cart-item-into">
-              <div className="cart-item-title">
-                {item.product.name} {item.product.price}
-              </div>
 
-              <button value={index} onClick={handleDecrease}>
-                -
-              </button>
-              <input
-                type="number"
-                name={index}
-                value={item.num}
-                // onChange={handleChange}
-              />
-              <button value={index} onClick={handleIncrease}>
-                +
-              </button>
-            </div>
+      <div className="cart">
+        <h1>Cart</h1>
+        <div className="cart-content">
+          {" "}
+          <div className="cart-items">
+            {props.cart.length === 0 ? <div>Your cart is empty.</div> : ""}
+            {props.cart.map((item, index) => {
+              return (
+                <div className="cart-item" key={index}>
+                  <img src={item.product.pic} alt={item.product.name} />
+                  <div className="cart-item-info">
+                    <div className="cart-item-name">{item.product.name}</div>
+                    <div className="cart-item-price">${item.product.price}</div>
+                    <div className="cart-item-control">
+                      <button value={index} onClick={handleDecrease}>
+                        -
+                      </button>
+                      <input
+                        type="number"
+                        name={index}
+                        value={item.num}
+                        // onChange={handleChange}
+                      />
+                      <button value={index} onClick={handleIncrease}>
+                        +
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
-        );
-      })}
-      Subtotal ${total.toFixed(2)}
-      <a href="/products">Continue Shopping</a>
-      <a href="/checkout">Checkout</a>
+          <div className="cart-total">
+            <h2>Subtotal: ${total.toFixed(2)}</h2>
+            <a href="/products">Continue Shopping</a>
+            <a href="/checkout">Checkout</a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

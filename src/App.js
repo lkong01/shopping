@@ -5,6 +5,7 @@ import Cart from "./components/Cart";
 import Home from "./components/Home";
 import Products from "./components/Products";
 import Nav from "./components/Nav";
+import Checkout from "./components/Checkout";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -32,6 +33,7 @@ function App() {
             path="/cart"
             element={<Cart cart={cart} setCart={setCart} />}
           />
+          <Route path="/checkout" element={<Checkout cart={cart} />} />
         </Routes>
       </BrowserRouter>
     </div>
