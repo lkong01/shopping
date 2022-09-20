@@ -27,6 +27,7 @@ function Nav(props) {
         </Link>
         <Link to="/">Home</Link>
         <Link to="/products">Products</Link>
+        <Link to="/order">Orders</Link>
       </div>
       <div className="nav-cart">
         <Link to="/cart">
