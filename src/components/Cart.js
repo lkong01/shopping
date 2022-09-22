@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../styles/cart.css";
 import Nav from "./Nav";
 
@@ -87,8 +87,8 @@ function Cart(props) {
           </div>
           <div className="cart-total">
             <h2>Subtotal: ${total.toFixed(2)}</h2>
-            <a href="/products">Continue Shopping</a>
-            <a href="/checkout">Checkout</a>
+            <Link to="/products">Continue Shopping</Link>
+            <Link to="/checkout">Checkout</Link>
           </div>
         </div>
       </div>

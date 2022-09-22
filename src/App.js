@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { BrowserRouter, Routes, Route, Link, Outlet } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+  Outlet,
+  HashRouter,
+} from "react-router-dom";
 import Cart from "./components/Cart";
 import Home from "./components/Home";
 import Products from "./components/Products";
@@ -22,7 +29,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<Home cart={cart} />} />
 
