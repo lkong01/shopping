@@ -50,7 +50,7 @@ function Checkout(props) {
           <div className="checkout-total-cost">
             <div className="checkout-cost-item">
               <p>Items:</p>
-              <p>${itemsTotal}</p>
+              <p>${itemsTotal.toFixed(2)}</p>
             </div>
             <div className="checkout-cost-item">
               <p>Tax:</p>
